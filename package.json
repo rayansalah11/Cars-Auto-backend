@@ -1,0 +1,27 @@
+{
+  "name": "cars-auto-backend",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000C\u0000a\u0000r\u0000s\u0000-\u0000A\u0000u\u0000t\u0000o\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node backend/server.js",
+    "dev":"nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayansalah11/Cars-Auto-backend.git"
+  },
+  "author": "rayansalah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayansalah11/Cars-Auto-backend/issues"
+  },
+  "homepage": "https://github.com/rayansalah11/Cars-Auto-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
