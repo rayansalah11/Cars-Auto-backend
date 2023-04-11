@@ -84,6 +84,11 @@ const productSchema = new mongoose.Schema({
       type: mongoose.Schema.ObjectId,
       ref:"User",
     //   required: true
+  },
+  createAt:{
+      type:Date,
+      default: Date.now()
   }
+})
 
 module.exports = mongoose.model("Product",productSchema);
