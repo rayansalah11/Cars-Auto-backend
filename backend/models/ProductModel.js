@@ -23,5 +23,12 @@ const productSchema = new mongoose.Schema({
     },
     color:{
         type: String,
-    }]
+    },
+    size:{
+        type: String,
+    },
+    ratings:{
+        type: Number,
+        default: 0,
+    },]
 module.exports = mongoose.model("Product",productSchema);
