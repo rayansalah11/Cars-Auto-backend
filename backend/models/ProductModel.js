@@ -42,5 +42,9 @@ const productSchema = new mongoose.Schema({
                 required:true,
             },
         }
-    ]
+    ],
+    category:{
+        type: String,
+        required:[true,"Please add a category of your product"],
+    }
 module.exports = mongoose.model("Product",productSchema);
