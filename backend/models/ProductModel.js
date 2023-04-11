@@ -46,5 +46,11 @@ const productSchema = new mongoose.Schema({
     category:{
         type: String,
         required:[true,"Please add a category of your product"],
+    },
+    Stock:{
+        type: Number,
+        required:[true,"Please add some stoke for your product"],
+        maxLength: [3, "Stock can not exceed than 3 characters"],
     }
+
 module.exports = mongoose.model("Product",productSchema);
