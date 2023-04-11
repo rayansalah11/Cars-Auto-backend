@@ -51,6 +51,10 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required:[true,"Please add some stoke for your product"],
         maxLength: [3, "Stock can not exceed than 3 characters"],
-    }
+    },
+  numOfReviews:{
+      type: Number,
+      default: 0
+
 
 module.exports = mongoose.model("Product",productSchema);
