@@ -1,13 +1,15 @@
 const app = require("./app");
 const dotenv = require("dotenv");
-
+const connectDatabase = require("./db/Database.js");
 
 // config
-if(process.env.NODE_ENV!=="PRODUCTION"){
-    require("dotenv").config({
-        path:"backend/config/.env"
-    })}
-// create server
-const server = app.listen(process.env.PORT,() =>{
-    console.log(`Server is working on http://localhost:${process.env.PORT}`)
+dotenv.config({
+  path:"backend/config/.env"
+    
 })
+// connect database
+connectDatabase();
+// create server
+const server = app.listen(process.env.PORT, () => {
+  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+});
