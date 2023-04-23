@@ -33,12 +33,31 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
     product,
   });
 });
-// Get All Product (Admin)
+// Get All Product (Admin
 exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
   const products = await Product.find();
 
   res.status(200).json({
     success: true,
     products,
+  });
+});
+
+// get All Products
+exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+  const resultPerPage = 8;
+
+  const productsCount = await Product.countDocuments();
+
+  const feature = new Features(Product.find(), req.query)
+    .search()
+    .filter()
+    .pagination(resultPerPage);
+  const products = await feature.query;
+  res.status(200).json({
+    success: true,
+    products,
+    productsCount,
+    resultPerPage,
   });
 });
