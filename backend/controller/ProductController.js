@@ -33,22 +33,12 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
     product,
   });
 });
+// Get All Product (Admin)
+exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
+  const products = await Product.find();
 
-// Update Product ---Admin
-exports.updateProduct = (async (req, res, next) => {
-  let product = await Product.findById(req.params.id);
-  if (!product) {
-    return next(new ErrorHandler("Product is not found with this id", 404));
-  }
-  product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  });
   res.status(200).json({
     success: true,
-    product,
+    products,
   });
 });
-
