@@ -61,3 +61,20 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     resultPerPage,
   });
 });
+
+
+// Update Product ---Admin
+exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
+  let product = await Product.findById(req.params.id);
+  if (!product) {
+    return next(new ErrorHandler("Product is not found with this id", 404));
+  }
+
+  let images = [];
+
+  if (typeof req.body.images === "string") {
+    images.push(req.body.images);
+  } else {
+    images = req.body.images;
+  }
+
