@@ -1,10 +1,16 @@
 const Product = require("../models/ProductModel.js");
+//create product
+exports.createProducts =  async (req ,res , next ) => {
+  const product = await product.create(res.body);
 
-//get all products
-exports.getAllProducts = async (req,res) =>{
-  const products = await Product.find();
+  res.status(201).json({
+   success:true,
+   product
+  })
+};
+
+exports.getAllProducts =  (req,res) =>{
   res.status(200).json({
-    success:true,
-    products
+    massage:"route is working fine"
   })
 }
