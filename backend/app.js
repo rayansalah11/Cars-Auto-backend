@@ -10,4 +10,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   }
 
 
+//ErrorHandling abe la kotaiabe
+app.use(ErrorHandler);
+
   module.exports = app;
