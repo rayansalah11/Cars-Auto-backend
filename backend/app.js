@@ -2,9 +2,12 @@ const express = require("express");
 const app = express();
 
 
-app.use(express.json());
+// config
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({
+      path: "backend/config/.env",
+    });
+  }
 
-// route import 
-const product = require("./routes/ProductRoute")
-app.use("/api/v2", product);
-module.exports = app
+
+  module.exports = app;

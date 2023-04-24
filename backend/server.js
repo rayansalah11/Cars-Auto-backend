@@ -2,14 +2,27 @@ const app = require("./app");
 const dotenv = require("dotenv");
 const connectDatabase = require("./db/Database.js");
 
+
+// Handling uncaught Exception
+process.on("uncaughtException", (err) => {
+  console.log(`Error: ${err.message}`);
+  console.log(`shutting down the server for handling uncaught exception`);
+});
+
 // config
-dotenv.config({
-  path:"backend/config/.env"
-    
-})
-// connect database
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({
+    path: "backend/config/.env",
+  });
+}
+
+// connect db
 connectDatabase();
+
+
 // create server
 const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+  console.log(
+    `Server is running on http://localhost:${process.env.PORT}`
+  );
 });
