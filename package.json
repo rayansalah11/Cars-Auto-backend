@@ -1,28 +1,28 @@
 {
-  "name": "cars-auto-backend",
+  "name": "autocars",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000C\u0000a\u0000r\u0000s\u0000-\u0000A\u0000u\u0000t\u0000o\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "description": "",
   "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "start": "node backend/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rayansalah11/Cars-Auto-backend.git"
-  },
-  "author": "rayansalah",
+  "author": "rayan salah",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rayansalah11/Cars-Auto-backend/issues"
-  },
-  "homepage": "https://github.com/rayansalah11/Cars-Auto-backend#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^7.0.3",
-    "nodemon": "^2.0.22"
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20",
+    "stripe": "^12.0.0"
   }
 }
