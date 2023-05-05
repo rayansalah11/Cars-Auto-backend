@@ -6,10 +6,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
-app.use(cors({
-  origin: 'https://eshop-tutorial-cefl.vercel.app',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: ["https://eshop-tutorial-cefl.vercel.app", "http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
