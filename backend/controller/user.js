@@ -73,7 +73,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
 // create activation token
 const createActivationToken = (user) => {
   return jwt.sign(user, process.env.ACTIVATION_SECRET, {
-    expiresIn: "5m",
+    expiresIn: "15m",
   });
 };
 
@@ -108,6 +108,7 @@ router.post(
 
       sendToken(user, 201, res);
     } catch (error) {
+      console.log(error);
       return next(new ErrorHandler(error.message, 500));
     }
   })
