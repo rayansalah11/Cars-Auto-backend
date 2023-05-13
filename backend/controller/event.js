@@ -26,6 +26,13 @@ router.post(
         eventData.images = imageUrls;
         eventData.shop = shop;
 
+        if (
+          !eventData.discountPrice ||
+          eventData.discountPrice === "undefined"
+        ) {
+          delete eventData.discountPrice;
+        }
+
         const product = await Event.create(eventData);
 
         res.status(201).json({
